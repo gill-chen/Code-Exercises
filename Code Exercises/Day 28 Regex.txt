@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
+        int N = in.nextInt();
+        ArrayList<String> list = new ArrayList<String>();
+        for(int a0 = 0; a0 < N; a0++){
+            String firstName = in.next();
+            String emailID = in.next();
+            String reg = "(@gmail.com)";
+            Pattern p = Pattern.compile(reg);
+            Matcher m = p.matcher(emailID);
+            if (m.find()){
+                list.add(firstName);
+            }            
+        }
+      java.util.Collections.sort(list);
+        for (int i = 0; i < list.size(); i++)
+        System.out.println(list.get(i));
+                
+        
+        
+    }
+}

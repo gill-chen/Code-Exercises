@@ -1,0 +1,16 @@
+Difference(int[] elements){
+    this.elements = elements; 
+}
+
+void computeDifference(){
+    int maximumTempDifference = 0;
+    maximumDifference = 0;
+    for (int i = 0; i < elements.length -1; i++){
+        for (int j = i; j < elements.length-1; j++){
+            maximumTempDifference = Math.abs(elements[i] - elements[j+1]);
+            if (maximumTempDifference > maximumDifference){
+                maximumDifference = maximumTempDifference;
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+public class Solution {
+    LinkedList<Character> queue = new LinkedList<Character>();
+    Stack<Character> stacks = new Stack<Character>();
+    
+    void pushCharacter(char c){
+        stacks.push(c);
+    }
+    void enqueueCharacter(char c){
+        queue.addLast(c);
+    }
+    char popCharacter(){
+       return stacks.pop();
+    }
+    char dequeueCharacter(){
+        return (Character)queue.remove(0);
+    }
+  

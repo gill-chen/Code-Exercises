@@ -1,0 +1,30 @@
+public static Node removeDuplicates(Node head) {
+
+    Node cur = head;
+    while (cur != null){
+        while ( cur.next != null && cur.data == cur.next.data){
+            Node next = cur.next;
+            Node next2 = next.next;
+            cur.next = next2;
+        }
+        cur = cur.next;
+        }
+    return head;
+}
+
+public static Node removeDuplicates(Node head) {
+
+    Node cur = head;
+    while (cur != null){
+        if (cur.data != cur.next.data){
+            cur = cur.next;
+        }
+        else{
+            while ( cur.next != null && cur.data == cur.next.data){
+                Node next = cur.next;
+                cur.next = next.next;
+            }
+        }
+    }
+    return head;
+}

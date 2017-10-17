@@ -1,0 +1,19 @@
+static void levelOrder(Node root){
+    LinkedList<Node> queue = new LinkedList<Node>();
+
+    if (root != null){
+        queue.addLast(root);
+
+        while (queue != null){
+            Node currentRoot = queue.removeFirst();
+            System.out.print(currentRoot.data + " ");
+            if (currentRoot.left != null){
+                queue.addLast(currentRoot.left);
+            }
+            if (currentRoot.right != null){
+                queue.addLast(currentRoot.right);
+            }
+        }
+    }
+
+}

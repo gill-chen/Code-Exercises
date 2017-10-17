@@ -1,0 +1,46 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        int actualDay = scan.nextInt();
+        int actualMonth = scan.nextInt();
+        int actualYear = scan.nextInt();
+        
+        int expectedDay = scan.nextInt();
+        int expectedMonth = scan.nextInt();
+        int expectedYear = scan.nextInt();
+        
+        if (actualYear > expectedYear){
+            System.out.println("10000");
+        }
+        else if (actualYear < expectedYear){
+            System.out.println("0");
+        }
+        else {
+            if (actualMonth > expectedMonth){
+                int fine = 500*(actualMonth - expectedMonth);
+                System.out.println(fine);
+            }
+            else if (actualMonth < expectedMonth){
+                System.out.println("0");
+            }
+            else{
+                if (actualDay >= expectedDay){
+                    int fine = 15*(actualDay - actualMonth);
+                    System.out.println(fine);                   
+                }
+                else {
+                    System.out.println("0");
+                }
+            }
+        }
+        
+     
+    }
+}
